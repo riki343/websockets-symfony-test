@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    {% block body %}
+
+    {% endblock %}
+    {% block javascripts %}
+        {{ clank_client() }}
+        <script src="{{ asset('js/Angular/angular.min.js') }}"></script>
+        <script src="{{ asset('js/Angular/angular-route.min.js') }}"></script>
+        <script src="{{ asset('js/Custom/core.js') }}"></script>
+        <script src="{{ asset('js/Custom/core.clank.service.js') }}"></script>
+        <script src="{{ asset('js/Custom/core.controller.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

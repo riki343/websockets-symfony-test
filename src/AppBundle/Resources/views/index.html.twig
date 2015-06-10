@@ -1,0 +1,17 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block body %}
+    <div ng-app="answer">
+        <div ng-controller="CoreController as core">
+            <button ng-click="core.subscribe();">Subscribe</button>
+            <button ng-click="core.disconnect();">Disconnect</button>
+            <form ng-submit="core.addMessage(core.message);">
+                <input type="text" ng-model="core.message" />
+                <button type="submit">Send Message</button>
+            </form>
+            <ul>
+                <li ng-repeat="message in core.messages.slice().reverse() track by $index" ng-bind="message"></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

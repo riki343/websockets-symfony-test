@@ -1,0 +1,7 @@
+services:
+    app.file_logger:
+        class: AppBundle\Service\FileLogger
+
+    app.topic:
+        class: AppBundle\Topic\AppTopic
+        arguments: ["@app.file_logger"]
